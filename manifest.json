@@ -1,0 +1,11 @@
+{
+    "name": "Legendary Integration",
+    "platform": "humble",
+    "guid": "8d1ab8a0-a831-4286-867b-90245f83b6ca",
+    "version": "0.1",
+    "description": "Alternative Epic Games intergration for GOG",
+    "author": "Scott",
+    "email": "author@email.com",
+    "url": "https://github.com/user/galaxy-plugin-example",
+    "script": "plugin.py"
+}
