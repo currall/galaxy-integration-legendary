@@ -1,1 +1,3 @@
 legendary: G:\Program Files (x86)\Legendary
+
+// Add legendary location here, e.g G:\Program Files (x86)\Legendary
