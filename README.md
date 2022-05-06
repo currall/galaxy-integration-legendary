@@ -8,5 +8,6 @@ Allows you to install, launch and uninstall your Epic Games library through the 
 4. Some games do not work. They will be missing titles and box art, and will not let you install them. You can launch them if already installed in legendary.
 5. This integration is only tested on Windows. It may work on other platforms, but I doubt it.
 
-Credit to Countryen for the GOG generic itegration, I used parts of their integration to make this.
+Credit to Countryen for the GOG generic integration, I used parts of their integration to make this.
+
 https://github.com/Countryen/gog-generic-integration
