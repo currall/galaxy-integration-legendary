@@ -1,28 +1,28 @@
-gog - Gog
+gog - GOG
 steam - Steam
-psn - Psn
+psn - Playstation Network
 xboxone - XBoxOne
 generic - Generic
 origin - Origin
-uplay - Uplay
-battlenet - Battlenet
+uplay - Ubisoft Uplay/Connect
+battlenet - Battle.net
 epic - Epic
 bethesda - Bethesda
-paradox - ParadoxPlaza
-humble - HumbleBundle
+paradox - Paradox Plaza
+humble - Humble Bundle
 kartridge - Kartridge
-itch - ItchIo
-nswitch - NintendoSwitch
-nwiiu - NintendoWiiU
-nwii - NintendoWii
-ncube - NintendoGameCube
-riot - RiotGames
+itch - Itch.io
+nswitch - Nintendo Switch
+nwiiu - Nintendo Wii U
+nwii - Nintendo Wii
+ncube - Nintendo GameCube
+riot - Riot Games
 wargaming - Wargaming
-ngameboy - NintendoGameBoy
+ngameboy - Nintendo GameBoy
 atari - Atari
 amiga - Amiga
-snes - SuperNintendoEntertainmentSystem
-beamdog - Beamdog)
+snes - Super Nintendo Entertainment System
+beamdog - Beamdog
 d2d - Direct2Drive
 discord - Discord
 dotemu - DotEmu
@@ -31,22 +31,22 @@ gmg - GreenManGaming
 weplay - WePlay
 zx - ZxSpectrum
 vision - ColecoVision
-nes - NintendoEntertainmentSystem
-sms - SegaMasterSystem
-c64 - Commodore64
-pce - PcEngine
-segag - SegaGenesis
+nes - Nintendo Entertainment System
+sms - Sega Master System
+c64 - Commodore 64
+pce - PC Engine
+segag - Sega Genesis
 neo - NeoGeo
-sega32 - Sega32X
-segacd - SegaCd
-3do - _3Do
-saturn - SegaSaturn
+sega32 - Sega 32X
+segacd - Sega CD
+3do - 3Do
+saturn - Sega Saturn
 psx - PlayStation
-ps2 - PlayStation2
-n64 - Nintendo64
-jaguar - AtariJaguar
-dc - SegaDreamcast
-xboxog - Xbox
+ps2 - PlayStation 2
+n64 - Nintendo 64
+jaguar - Atari Jaguar
+dc - Sega Dreamcast
+xboxog - Original Xbox
 amazon - Amazon
 gg - GamersGate
 egg - Newegg
@@ -56,25 +56,25 @@ fanatical - Fanatical
 playasia - PlayAsia
 stadia - Stadia
 arc - Arc
-eso - ElderScrollsOnline
+eso - Elder Scrolls Online
 glyph - Glyph
-aionl - AionLegionsOfWar
+aionl - Aion Legions Of War
 aion - Aion
-blade - BladeAndSoul
-gw - GuildWars
-gw2 - GuildWars2
-lin2 - Lineage2
-ffxi - FinalFantasy11
-ffxiv - FinalFantasy14
-totalwar - TotalWar
-winstore - WindowsStore
-elites - EliteDangerous
-star - StarCitizen
-psp - PlayStationPortable
-psvita - PlayStationVita
-nds - NintendoDs
-3ds - Nintendo3Ds
-pathofexile - PathOfExile
+blade - Blade And Soul
+gw - Guild Wars
+gw2 - Guild Wars 2
+lin2 - Lineage 2
+ffxi - FinalFantasy 11
+ffxiv - FinalFantasy 14
+totalwar - Total War
+winstore - Microsoft Store
+elites - Elite Dangerous
+star - Star Citizen
+psp - Sony PSP
+psvita - PlayStation Vita
+nds - Nintendo DS
+3ds - Nintendo 3DS
+pathofexile - Path Of Exile
 twitch - Twitch
 minecraft - Minecraft
 gamesessions - GameSessions
@@ -84,4 +84,4 @@ indiegala - IndieGala
 playfire - Playfire
 oculus - Oculus
 test - Test
-rockstar - Rockstar)])
+rockstar - Rockstar
