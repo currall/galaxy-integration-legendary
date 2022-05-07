@@ -8,6 +8,8 @@ import subprocess
 from datetime import datetime
 from typing import Dict, List, Optional
 
+from http_client import AuthenticatedHttpClient, Credentials
+from backend import EpicClient, LibraryItem, LibraryPlatform, Friend
 from galaxy.api.consts import LicenseType, Platform
 from galaxy.api.plugin import Plugin, create_and_run_plugin
 from galaxy.api.types import Game, LicenseInfo, LicenseType, Authentication, LocalGame, NextStep, GameTime
@@ -19,6 +21,10 @@ logger = logging.getLogger(__name__)
 configfile = open(currentdir+"\\config.txt","r")
 config = configfile.readlines()
 legendary_location = config[0].replace("legendary: ","")
+legendary_location = legendary_location.replace("\n","")
+
+launch_flags = config[1].replace("launch flags:","")
+launch_flags = launch_flags.replace("\n","")
 
 class LegendaryPlugin(Plugin):
     def __init__(self, reader, writer, token):
@@ -31,20 +37,22 @@ class LegendaryPlugin(Plugin):
             writer,
             token
         )
+        self._http_client = AuthenticatedHttpClient(self.refresh_credentials, self.lost_authentication_dummy)
         
         self.checking_for_new_games = False
 
     async def launch_game(self, game_id):
         #os.system('"G:\Program Files (x86)\Legendary\legendary.exe" launch ' + game_id)
-        os.system('"'+legendary_location+'\legendary.exe" launch ' + game_id)
-
+        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" update '+game_id+'"')
+        os.system('"'+legendary_location+'\legendary.exe" launch ' + game_id + launch_flags)
+    
     async def install_game(self, game_id):
         #os.system('start cmd.exe /c ""G:\Program Files (x86)\Legendary\legendary.exe" install '+game_id+'" -y')
-        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" install '+game_id+'" -y')
+        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" install '+game_id+'"')
 
     async def uninstall_game(self, game_id):
         #os.system('start cmd.exe /c ""G:\Program Files (x86)\Legendary\legendary.exe" uninstall '+game_id+'" -y')
-        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" uninstall '+game_id+'" -y')
+        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" uninstall '+game_id+'"')
 
     async def get_owned_games(self) -> List[Game]:
         games = []
@@ -131,19 +139,27 @@ class LegendaryPlugin(Plugin):
                 game_name = ""
 
         return games
+        
+    def lost_authentication_dummy(self) -> None:
+        """Until GVAL-1773 is solved"""
+        logger.warning(
+            'Authentication lost has been triggered but will not be send.'
+            'The connected account may need reauthentication'
+        )
 
-    async def authenticate(self, stored_credentials=None):
-        """
-        Not needed, but needs to return a galaxy.api.types.Authentication for GOG to work.\n
-        Also, to stay connected we need to persist credentials here (locally in the plugin's .db file).\n
-        Overrides Plugin.authenticate
-        """
-        # Use stored_credentials (persisted locally in the plugin's .db-file) or create new creds and store them immediately
-        new_credentials = dict(
-            {"user_id": "legendary", "user_name": "legendary"})
-        creds = stored_credentials or new_credentials
-        self.store_credentials(creds)
-        return Authentication(creds["user_id"], creds["user_name"])
+    def _process_credentials(self, credentials) -> Credentials:
+        assert credentials is not None, 'No stored credentials received'
+        self._last_credentials_data = credentials
+        return json.loads(credentials['auth_data'])
+
+    async def refresh_credentials(self) -> Credentials:
+        return self._process_credentials(
+            await super().refresh_credentials(self._last_credentials_data, sensitive_params=True))
+
+    async def authenticate(self, stored_credentials):
+        credentials = self._process_credentials(stored_credentials)
+        self._http_client.set_credentials(credentials)
+        return Authentication(self._http_client.account_id, self._http_client.display_name)
 
 def main():
     """run plugin event loop. INTEGRATION"""

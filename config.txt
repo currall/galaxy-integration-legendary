@@ -1,1 +1,2 @@
 legendary: G:\Program Files (x86)\Legendary
+launch flags: 
