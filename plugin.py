@@ -48,7 +48,7 @@ class LegendaryPlugin(Plugin):
 
     async def launch_game(self, game_id):
         #os.system('"G:\Program Files (x86)\Legendary\legendary.exe" launch ' + game_id)
-        if "false" in update_check.lower()
+        if "false" in update_check.lower():
             os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" update '+game_id+'"')
         os.system('"'+legendary_location+'\legendary.exe" launch ' + game_id + launch_flags)
     
