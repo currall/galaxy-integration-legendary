@@ -23,8 +23,14 @@ config = configfile.readlines()
 legendary_location = config[0].replace("legendary: ","")
 legendary_location = legendary_location.replace("\n","")
 
+if legendary_location == "":
+    legendary_location = currentdir+"\\legendary"
+
 launch_flags = config[1].replace("launch flags:","")
 launch_flags = launch_flags.replace("\n","")
+
+update_check = config[2].replace("update check:","")
+update_check = update_check.replace("\n","")
 
 class LegendaryPlugin(Plugin):
     def __init__(self, reader, writer, token):
@@ -43,7 +49,8 @@ class LegendaryPlugin(Plugin):
 
     async def launch_game(self, game_id):
         #os.system('"G:\Program Files (x86)\Legendary\legendary.exe" launch ' + game_id)
-        os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" update '+game_id+'"')
+        if update_check.lower() != "false"
+            os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" update '+game_id+'"')
         os.system('"'+legendary_location+'\legendary.exe" launch ' + game_id + launch_flags)
     
     async def install_game(self, game_id):
@@ -64,11 +71,11 @@ class LegendaryPlugin(Plugin):
         printing = False
         game_name = ""
 
-        for i in range(len(output)-3):
+        for i in range(len(output)-4):
             
             if output[i] == "*":
                 printing = True
-            elif output[i+3] == "(":
+            elif output[i+3] == "(" and output[i+4] != ")":
                 printing = False
 
             if printing:
@@ -108,11 +115,11 @@ class LegendaryPlugin(Plugin):
         printing = False
         game_name = ""
 
-        for i in range(len(output)-3):
+        for i in range(len(output)-4):
             
             if output[i] == "*":
                 printing = True
-            elif output[i+3] == "(":
+            elif output[i+3] == "(" and output[i+4] != ")":
                 printing = False
 
             if printing:
