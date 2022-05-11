@@ -5,7 +5,7 @@ Allows you to install, launch and uninstall your Epic Games library through the 
 ### Manual
 
 1. Install the plugin to %localappdata%\GOG.com\Galaxy\plugins\installed\GalaxyPluginEpic.
-2. Legendary must already be present on the user's computer. Specify the legendary location in config.txt.
+2. (Optional) Set the location of your prefered "legendary.exe" in config.txt. If left black will just use included version.
 3. This integration is only tested on Windows. It may work on other platforms, but I doubt it.
 
 ### Scoop
