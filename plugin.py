@@ -23,7 +23,7 @@ config = configfile.readlines()
 legendary_location = config[0].replace("legendary: ","")
 legendary_location = legendary_location.replace("\n","")
 
-if legendary_location == "":
+if not os.path.isfile(legendary_location+'\legendary.exe'):
     legendary_location = currentdir+"\\legendary"
 
 launch_flags = config[1].replace("launch flags:","")
