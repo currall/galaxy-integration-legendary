@@ -29,8 +29,7 @@ if legendary_location == "":
 launch_flags = config[1].replace("launch flags:","")
 launch_flags = launch_flags.replace("\n","")
 
-update_check = config[2].replace("update check:","")
-update_check = update_check.replace("\n","")
+update_check = config[2]
 
 class LegendaryPlugin(Plugin):
     def __init__(self, reader, writer, token):
@@ -49,7 +48,7 @@ class LegendaryPlugin(Plugin):
 
     async def launch_game(self, game_id):
         #os.system('"G:\Program Files (x86)\Legendary\legendary.exe" launch ' + game_id)
-        if update_check.lower() != "false"
+        if "false" in update_check.lower()
             os.system('start cmd.exe /c ""'+legendary_location+'\legendary.exe" update '+game_id+'"')
         os.system('"'+legendary_location+'\legendary.exe" launch ' + game_id + launch_flags)
     
