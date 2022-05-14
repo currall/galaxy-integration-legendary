@@ -18,18 +18,29 @@ now = datetime.now()
 currentdir = os.path.dirname(__file__)
 logger = logging.getLogger(__name__)
 
-configfile = open(currentdir+"\\config.txt","r")
-config = configfile.readlines()
-legendary_location = config[0].replace("legendary: ","")
-legendary_location = legendary_location.replace("\n","")
+try:
+    configfile = open(currentdir+"\\config.txt","r")
+    config = configfile.readlines()
 
-if not os.path.isfile(legendary_location+'\legendary.exe'):
+try:
+    legendary_location = config[0].replace("legendary: ","")
+    legendary_location = legendary_location.replace("\n","")
+
+    if not os.path.isfile(legendary_location+'\legendary.exe'):
+        legendary_location = currentdir+"\\legendary"
+except:
     legendary_location = currentdir+"\\legendary"
 
-launch_flags = config[1].replace("launch flags:","")
-launch_flags = launch_flags.replace("\n","")
+try:
+    launch_flags = config[1].replace("launch flags:","")
+    launch_flags = launch_flags.replace("\n","")
+except:
+    launch_flags = ""
 
-update_check = config[2]
+try:
+    update_check = config[2]
+except:
+    update_check = true
 
 class LegendaryPlugin(Plugin):
     def __init__(self, reader, writer, token):
