@@ -2,11 +2,16 @@
 
 Allows you to install, launch and uninstall your Epic Games library through the open-source alternative to the Epic Games Launcher - Legendary launcher (https://github.com/derrod/legendary)
 
+This integration is only tested on Windows. It may work on other platforms, but I doubt it.
+
+### Automatic
+
+1. Run "install_plugin.bat"
+
 ### Manual
 
-1. Install the plugin to %localappdata%\GOG.com\Galaxy\plugins\installed\GalaxyPluginEpic.
-2. (Optional) Set the location of your prefered "legendary.exe" in config.txt. If left blank will just use included version.
-3. This integration is only tested on Windows. It may work on other platforms, but I doubt it.
+1. Copy the plugin to %localappdata%\GOG.com\Galaxy\plugins\installed\GalaxyPluginEpic.
+2. Set the location of your prefered "legendary.exe" in config.txt. If left blank will just use included version.
 
 ### Scoop
 
