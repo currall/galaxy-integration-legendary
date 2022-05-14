@@ -21,6 +21,8 @@ logger = logging.getLogger(__name__)
 try:
     configfile = open(currentdir+"\\config.txt","r")
     config = configfile.readlines()
+except:
+    pass
 
 try:
     legendary_location = config[0].replace("legendary: ","")
