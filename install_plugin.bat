@@ -1,0 +1,1 @@
+xcopy .\plugin\ %localappdata%\GOG.com\Galaxy\plugins\installed\GalaxyPluginEpic\ /s
