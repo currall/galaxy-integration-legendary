@@ -6,7 +6,7 @@ This integration is only tested on Windows. It may work on other platforms, but 
 
 ### Automatic
 
-1. Download source code or "Epic.zip"
+1. Download source code
 2. Run "install_plugin.bat"
 
 ### Manual
