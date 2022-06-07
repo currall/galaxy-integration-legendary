@@ -26,5 +26,3 @@ scoop install galaxy-integration-legendary
 Credit to Countryen for the GOG generic integration, I used parts of their integration to make this.
 
 https://github.com/Countryen/gog-generic-integration
-
-Also credit to GOG for the official Epic integration, I used their authentication code.
