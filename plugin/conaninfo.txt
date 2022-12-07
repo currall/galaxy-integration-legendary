@@ -1,0 +1,23 @@
+[settings]
+    os=Windows
+
+[requires]
+
+
+[options]
+
+
+[full_settings]
+    os=Windows
+
+[full_requires]
+
+
+[full_options]
+
+
+[recipe_hash]
+    51ac768f74b7fbd86ae31d434cd848d0
+
+[env]
+
